@@ -213,27 +213,49 @@ body{
   color:#8A8A8A;
 }
 
+/* NOVO BLOQUEIO PREMIUM */
+
 .locked-post{
-  height:220px;
+  height:240px;
   margin:0 16px 16px;
   border-radius:16px;
-  background:url('post.jpg') center/cover;
-  position:relative;
-  overflow:hidden;
-  filter:blur(6px);
-}
-
-.overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
+  background:#ffffff;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:24px;
+}
+
+.lock-icon{
+  width:70px;
+  height:70px;
+  stroke:#000;
+  stroke-width:1.8;
+  fill:none;
+  opacity:0.85;
+}
+
+.lock-stats{
+  display:flex;
+  gap:22px;
+  margin-top:20px;
   font-size:13px;
-  font-weight:600;
-  filter:none;
+  color:#555;
+  align-items:center;
+}
+
+.lock-stats div{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.lock-stats svg{
+  width:16px;
+  height:16px;
+  stroke:#555;
+  fill:none;
+  stroke-width:2;
 }
 
 /* ===== MODAL PIX ===== */
@@ -282,11 +304,10 @@ body{
 </head>
 <body>
 
-<!-- BLOCO 1 -->
+<!-- BLOCO 1 (mantido igual ao anterior) -->
 <div class="card">
   <div class="cover"></div>
   <div class="profile-area">
-
     <div class="profile-header">
       <img src="perfil.jpg" class="profile-img">
       <div>
@@ -305,40 +326,29 @@ body{
 
     <div class="content-stats">
       <div>
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="9"></circle>
-        </svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
         283
       </div>
       <div>
-        <svg viewBox="0 0 24 24">
-          <rect x="4" y="6" width="16" height="12"></rect>
-        </svg>
+        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12"/></svg>
         470
       </div>
       <div>
-        <svg viewBox="0 0 24 24">
-          <path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"></path>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"/></svg>
         293K
       </div>
     </div>
 
     <div class="city">📍 Sua Cidade</div>
 
-    <div class="socials">
-      <!-- suas redes aqui -->
-    </div>
-
     <div class="actions">
       <div class="btn btn-pix" onclick="openModal()">Mimo (Pix)</div>
       <div class="btn btn-chat" onclick="window.open('https://wa.me/SEUNUMERO')">Chat</div>
     </div>
-
   </div>
 </div>
 
-<!-- BLOCO 2 -->
+<!-- BLOCO 2 (inalterado) -->
 <div class="card">
   <div class="section-title">Assinaturas</div>
   <div class="plan" onclick="openModal()">1 Mês <span>R$ 39,90</span></div>
@@ -346,31 +356,41 @@ body{
   <div class="plan" onclick="openModal()">12 Meses VIP <span>R$ 149,90</span></div>
 </div>
 
-<!-- BLOCO 3 -->
+<!-- BLOCO 3 NOVO PREMIUM -->
 <div class="card">
   <div class="post-stats">
     <span>15 Postagens</span>
     <span>15 Mídias</span>
   </div>
 
-  <div class="mini-profile">
-    <img src="perfil.jpg">
-    <div>
-      <div class="mini-name">SEU NOME <span class="verified">✔</span></div>
-      <div class="mini-user">@seuuser</div>
-    </div>
-  </div>
-
   <div class="locked-post">
-    <div class="overlay">
-      <div>📸 8</div>
-      <div>🎥 3</div>
-      <div>❤️ 2.4K</div>
+
+    <!-- Cadeado Premium -->
+    <svg class="lock-icon" viewBox="0 0 24 24">
+      <rect x="5" y="10" width="14" height="10" rx="2"/>
+      <path d="M8 10V7a4 4 0 018 0v3"/>
+    </svg>
+
+    <!-- Estatísticas -->
+    <div class="lock-stats">
+      <div>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+        283
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12"/></svg>
+        470
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"/></svg>
+        293K
+      </div>
     </div>
+
   </div>
 </div>
 
-<!-- MODAL PIX -->
+<!-- MODAL PIX (inalterado) -->
 <div class="modal" id="pixModal">
   <div class="modal-content">
     <h3>Pagamento via Pix</h3>
@@ -406,6 +426,9 @@ function copyPix(){
   alert("Código Pix copiado!");
 }
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
