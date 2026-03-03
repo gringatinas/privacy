@@ -22,7 +22,7 @@ body{
   overflow:hidden;
 }
 
-/* ===== BLOCO 1 ===== */
+/* BLOCO 1 */
 
 .cover{
   height:140px;
@@ -100,34 +100,6 @@ body{
   stroke-width:2;
 }
 
-/* REDES SOCIAIS */
-
-.socials{
-  display:flex;
-  gap:16px;
-  margin-top:12px;
-}
-
-.social-icon{
-  width:28px;
-  height:28px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#ff8c5a;
-  transition:0.2s;
-}
-
-.social-icon svg{
-  width:22px;
-  height:22px;
-}
-
-.social-icon:hover{
-  transform:scale(1.1);
-  opacity:0.8;
-}
-
 /* BOTÕES */
 
 .actions{
@@ -146,9 +118,10 @@ body{
   font-size:14px;
   font-weight:600;
   cursor:pointer;
+  text-decoration:none;
 }
 
-.btn-pix{
+.btn-primary{
   background:linear-gradient(90deg,#ff8c5a,#ffb199);
   color:#000;
 }
@@ -156,9 +129,10 @@ body{
 .btn-chat{
   background:#1A1A1A;
   border:1px solid #262626;
+  color:#fff;
 }
 
-/* ===== BLOCO 2 ===== */
+/* BLOCO 2 */
 
 .section-title{
   font-size:16px;
@@ -178,9 +152,10 @@ body{
   color:#000;
   font-weight:600;
   cursor:pointer;
+  text-decoration:none;
 }
 
-/* ===== BLOCO 3 ===== */
+/* BLOCO 3 */
 
 .post-stats{
   display:flex;
@@ -233,50 +208,6 @@ body{
   gap:24px;
   font-size:13px;
   font-weight:600;
-  filter:none;
-}
-
-/* ===== MODAL PIX ===== */
-
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.85);
-  align-items:center;
-  justify-content:center;
-}
-
-.modal-content{
-  background:#111;
-  width:90%;
-  max-width:350px;
-  padding:24px;
-  border-radius:18px;
-  text-align:center;
-}
-
-.modal img{
-  width:200px;
-  margin:15px 0;
-}
-
-.pix-code{
-  background:#000;
-  padding:10px;
-  border-radius:10px;
-  font-size:12px;
-  word-break:break-all;
-  margin-bottom:12px;
-}
-
-.btn-copy{
-  background:linear-gradient(90deg,#ff8c5a,#ffb199);
-  border:none;
-  padding:12px;
-  border-radius:22px;
-  font-weight:600;
-  width:100%;
 }
 </style>
 </head>
@@ -305,34 +236,24 @@ body{
 
     <div class="content-stats">
       <div>
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="9"></circle>
-        </svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle></svg>
         283
       </div>
       <div>
-        <svg viewBox="0 0 24 24">
-          <rect x="4" y="6" width="16" height="12"></rect>
-        </svg>
+        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12"></rect></svg>
         470
       </div>
       <div>
-        <svg viewBox="0 0 24 24">
-          <path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"></path>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"></path></svg>
         293K
       </div>
     </div>
 
     <div class="city">📍 Sua Cidade</div>
 
-    <div class="socials">
-      <!-- suas redes aqui -->
-    </div>
-
     <div class="actions">
-      <div class="btn btn-pix" onclick="openModal()">Mimo (Pix)</div>
-      <div class="btn btn-chat" onclick="window.open('https://wa.me/SEUNUMERO')">Chat</div>
+      <a href="SEU_CHECKOUT_AQUI" class="btn btn-primary">Assinar Agora</a>
+      <a href="SEU_CHECKOUT_AQUI" class="btn btn-chat">Chat Premium</a>
     </div>
 
   </div>
@@ -341,9 +262,19 @@ body{
 <!-- BLOCO 2 -->
 <div class="card">
   <div class="section-title">Assinaturas</div>
-  <div class="plan" onclick="openModal()">1 Mês <span>R$ 39,90</span></div>
-  <div class="plan" onclick="openModal()">6 Meses Promo <span>R$ 89,90</span></div>
-  <div class="plan" onclick="openModal()">12 Meses VIP <span>R$ 149,90</span></div>
+
+  <a href="SEU_CHECKOUT_AQUI" class="plan">
+    1 Mês <span>R$ 39,90</span>
+  </a>
+
+  <a href="SEU_CHECKOUT_AQUI" class="plan">
+    6 Meses Promo <span>R$ 89,90</span>
+  </a>
+
+  <a href="SEU_CHECKOUT_AQUI" class="plan">
+    12 Meses VIP <span>R$ 149,90</span>
+  </a>
+
 </div>
 
 <!-- BLOCO 3 -->
@@ -370,16 +301,6 @@ body{
   </div>
 </div>
 
-<!-- MODAL PIX -->
-<div class="modal" id="pixModal">
-  <div class="modal-content">
-    <h3>Pagamento via Pix</h3>
-    <img src="qrcode.png">
-    <div class="pix-code" id="pixCode">SUA CHAVE PIX AQUI</div>
-    <button class="btn-copy" onclick="copyPix()">Copiar código Pix</button>
-  </div>
-</div>
-
 <script>
 function toggleText(){
   let shortText=document.getElementById("shortText");
@@ -395,15 +316,6 @@ function toggleText(){
     shortText.style.display="inline";
     btn.innerText="Ler mais";
   }
-}
-
-function openModal(){
-  document.getElementById("pixModal").style.display="flex";
-}
-function copyPix(){
-  let code=document.getElementById("pixCode").innerText;
-  navigator.clipboard.writeText(code);
-  alert("Código Pix copiado!");
 }
 </script>
 
