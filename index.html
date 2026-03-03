@@ -3,234 +3,370 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfil Premium</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Sua Marca</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#0f0f12;color:#fff}
-.container{max-width:420px;margin:auto;background:#16161c;min-height:100vh}
-.header{background:#2a2a2f;height:60px;display:flex;align-items:center;justify-content:center}
-.header img{height:30px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;background:#000;color:#fff}
 
-.cover{height:140px;background:linear-gradient(135deg,#ff6a00,#ff2d75)}
-.profile-area{position:relative;padding:0 20px 20px}
-.profile-pic{
-width:110px;height:110px;border-radius:50%;
-border:4px solid #16161c;
-background:url('https://via.placeholder.com/300') center/cover;
-position:absolute;top:-55px
+/* CARD */
+.card{background:#0D0D0D;margin:16px;border-radius:18px;overflow:hidden}
+
+/* BLOCO 1 */
+
+.cover{
+  height:150px;
+  background:url('capa.jpg') center/cover no-repeat;
 }
+
+.profile-area{padding:0 16px 20px}
+
+.profile-header{
+  display:flex;
+  align-items:flex-end;
+  gap:14px;
+  margin-top:-70px;
+}
+
+.profile-img-wrapper{
+  position:relative;
+}
+
+.profile-img{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:4px solid #000;
+}
+
 .online-dot{
-width:16px;height:16px;background:#00ff66;
-border-radius:50%;position:absolute;
-bottom:10px;right:5px;border:2px solid #16161c
+  width:16px;
+  height:16px;
+  background:#00ff66;
+  border-radius:50%;
+  position:absolute;
+  bottom:6px;
+  right:6px;
+  border:2px solid #000;
 }
-.profile-info{margin-top:65px}
-.name{font-size:20px;font-weight:600}
-.location{color:#aaa;font-size:14px;margin-top:2px}
-.stats{margin-top:8px;color:#aaa;font-size:13px;display:flex;gap:15px}
 
-.buttons{display:flex;gap:10px;margin-top:15px}
+.name-row{font-size:18px;font-weight:600}
+.verified{color:#ff8c5a;font-size:14px}
+.username{font-size:13px;color:#8A8A8A;margin-top:4px}
+.city{font-size:13px;color:#8A8A8A;margin-top:4px}
+
+.description{
+  font-size:14px;
+  line-height:1.4;
+  color:#CFCFCF;
+  margin-top:14px;
+}
+
+.read-more{
+  color:#ff8c5a;
+  cursor:pointer;
+  font-weight:500;
+  margin-left:4px;
+}
+
+.content-stats{
+  display:flex;
+  gap:20px;
+  margin-top:12px;
+  font-size:12px;
+  color:#9A9A9A;
+}
+
+.content-stats div{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.content-stats svg{
+  width:15px;height:15px;stroke:#9A9A9A;fill:none;stroke-width:2;
+}
+
+/* BOTÕES */
+
+.actions{display:flex;gap:12px;margin-top:18px}
+
 .btn{
-flex:1;padding:10px;border-radius:8px;
-font-weight:600;text-align:center;cursor:pointer
+  height:42px;
+  padding:0 18px;
+  border-radius:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
 }
-.chat{background:#2c2c34}
-.mimo{background:#2c2c34}
 
-.description{margin-top:15px;font-size:14px;color:#ccc}
-.vermais{color:#ff6a00;cursor:pointer;font-weight:500}
+.btn-pix{
+  background:linear-gradient(90deg,#ff8c5a,#ffb199);
+  color:#000;
+}
 
-.section{padding:20px}
-.assinatura button{
-width:100%;padding:12px;margin-bottom:10px;
-border:none;border-radius:8px;
-background:linear-gradient(90deg,#ff6a00,#ff2d75);
-color:#fff;font-weight:600;cursor:pointer
+.btn-chat{
+  background:#1A1A1A;
+  border:1px solid #262626;
 }
-.assinatura .promo{
-background:#2c2c34
+
+/* BLOCO 2 */
+
+.section-title{font-size:16px;font-weight:600;padding:16px}
+
+.plan{
+  height:64px;
+  margin:0 16px 12px;
+  padding:0 18px;
+  border-radius:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:linear-gradient(90deg,#ff8c5a,#ffb199);
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
 }
+
+.plan.secondary{
+  background:#1A1A1A;
+  color:#fff;
+  border:1px solid #262626;
+}
+
+/* BLOCO 3 */
 
 .tabs{
-display:flex;gap:10px;margin-bottom:15px
+  display:flex;
+  gap:10px;
+  padding:16px;
 }
+
 .tab{
-flex:1;padding:10px;border-radius:8px;
-background:#1f1f26;display:flex;
-align-items:center;justify-content:center;
-gap:6px;cursor:pointer
+  flex:1;
+  background:#1A1A1A;
+  border:1px solid #262626;
+  border-radius:12px;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  font-size:13px;
+  cursor:pointer;
 }
-.tab svg{width:18px;height:18px;stroke:#fff}
+
+.tab svg{width:16px;height:16px;stroke:#9A9A9A;fill:none;stroke-width:2}
 
 .post-card{
-background:#fff;border-radius:16px;
-color:#000;padding:12px
-}
-.post-header{
-display:flex;justify-content:space-between;
-align-items:center;margin-bottom:10px
-}
-.post-header .user{font-weight:600}
-.post-header .dots{
-font-size:20px;cursor:pointer
-}
-.post-image{
-height:280px;background:#fff;
-display:flex;align-items:center;justify-content:center;
-border-radius:12px;margin-bottom:10px
-}
-.post-image svg{width:70px;height:70px;opacity:0.3}
-.post-actions{
-display:flex;gap:15px;margin-top:5px
-}
-.post-actions svg{
-width:22px;height:22px;stroke:#000
+  margin:0 16px 16px;
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  color:#000;
 }
 
-.lock-area{
-margin-top:20px;
-background:#fff;
-height:260px;border-radius:20px;
-display:flex;flex-direction:column;
-align-items:center;justify-content:center
+.post-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px;
+  font-weight:600;
 }
-.lock-area svg{
-width:70px;height:70px;opacity:0.3
+
+.post-img{
+  height:220px;
+  background:#f2f2f2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
+
+.post-actions{
+  display:flex;
+  gap:16px;
+  padding:12px;
+}
+
+.post-actions svg{
+  width:22px;height:22px;stroke:#000;fill:none;stroke-width:2;
+}
+
+/* BLOQUEADO PREMIUM */
+
+.locked-post{
+  height:260px;
+  margin:0 16px 16px;
+  border-radius:16px;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.lock-icon{
+  width:70px;
+  height:70px;
+  stroke:#000;
+  stroke-width:1.6;
+  fill:none;
+  opacity:0.3;
+}
+
 .lock-stats{
-margin-top:15px;opacity:0.8;
-font-size:14px
+  display:flex;
+  gap:22px;
+  margin-top:20px;
+  font-size:13px;
+  color:#555;
+  opacity:0.8;
+}
+
+.lock-stats div{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.lock-stats svg{
+  width:16px;height:16px;stroke:#555;fill:none;stroke-width:2;
 }
 </style>
 </head>
 <body>
-<div class="container">
 
-<div class="header">
-<img src="" alt="Logo Aqui">
+<!-- BLOCO 1 -->
+<div class="card">
+  <div class="cover"></div>
+  <div class="profile-area">
+
+    <div class="profile-header">
+      <div class="profile-img-wrapper">
+        <img src="perfil.jpg" class="profile-img">
+        <div class="online-dot"></div>
+      </div>
+
+      <div>
+        <div class="name-row">SEU NOME <span class="verified">✔</span></div>
+        <div class="username">@seuuser</div>
+        <div class="city">📍 São Paulo - SP</div>
+      </div>
+    </div>
+
+    <div class="description">
+      <span id="shortText">Perfil exclusivo com conteúdos diferenciados e interação privada...</span>
+      <span id="fullText" style="display:none;">
+        Perfil exclusivo com conteúdos diferenciados, interação privada e experiências únicas para assinantes. Atualizações frequentes e conexão direta.
+      </span>
+      <span class="read-more" onclick="toggleText()" id="toggleBtn">Ler mais</span>
+    </div>
+
+    <div class="content-stats">
+      <div>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+        283
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12"/></svg>
+        470
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"/></svg>
+        293K
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="btn btn-pix">💲 Mimo</div>
+      <div class="btn btn-chat">💬 Chat</div>
+    </div>
+
+  </div>
 </div>
 
-<div class="cover"></div>
-
-<div class="profile-area">
-<div class="profile-pic">
-<div class="online-dot"></div>
+<!-- BLOCO 2 -->
+<div class="card">
+  <div class="section-title">Assinaturas</div>
+  <div class="plan">1 Mês <span>R$ 39,90</span></div>
+  <div class="plan secondary">Promoções</div>
+  <div class="plan">6 Meses Promo <span>R$ 89,90</span></div>
+  <div class="plan">12 Meses VIP <span>R$ 149,90</span></div>
 </div>
 
-<div class="profile-info">
-<div class="name">Nathalia Mingotti</div>
-<div class="location">São Paulo - SP</div>
+<!-- BLOCO 3 -->
+<div class="card">
 
-<div class="stats">
-<span>📸 342</span>
-<span>🎬 128</span>
-<span>❤️ 24.8k</span>
-</div>
+  <div class="tabs">
+    <div class="tab">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Postagens
+    </div>
+    <div class="tab">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+      Mídias
+    </div>
+  </div>
 
-<div class="buttons">
-<div class="btn chat">💬 Chat</div>
-<div class="btn mimo">💲 Mimo</div>
-</div>
+  <div class="post-card">
+    <div class="post-header">
+      <span>SEU NOME</span>
+      <span>⋯</span>
+    </div>
 
-<div class="description">
-<span id="text">
-Aqui serei sua bebê de 19 aninhos... conteúdo exclusivo e interação privada.
-</span>
-<span class="vermais" onclick="toggleText()"> Ver mais</span>
-</div>
+    <div class="post-img"></div>
 
-</div>
-</div>
+    <div class="post-actions">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 01-4 4H7l-4 4V7a4 4 0 014-4h10a4 4 0 014 4z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+    </div>
+  </div>
 
-<div class="section assinatura">
-<button>Assinar Plano Mensal</button>
-<button class="promo">Promoções</button>
-<button>Plano Trimestral</button>
-<button>Plano Vitalício</button>
-</div>
+  <div class="locked-post">
+    <svg class="lock-icon" viewBox="0 0 24 24">
+      <rect x="5" y="10" width="14" height="10" rx="2"/>
+      <path d="M8 10V7a4 4 0 018 0v3"/>
+    </svg>
 
-<div class="section">
+    <div class="lock-stats">
+      <div>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+        283
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12"/></svg>
+        470
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"/></svg>
+        293K
+      </div>
+    </div>
 
-<div class="tabs">
-<div class="tab">
-<svg fill="none" stroke-width="2" viewBox="0 0 24 24">
-<rect x="3" y="3" width="7" height="7"/>
-<rect x="14" y="3" width="7" height="7"/>
-<rect x="14" y="14" width="7" height="7"/>
-<rect x="3" y="14" width="7" height="7"/>
-</svg>
-Postagens
-</div>
-
-<div class="tab">
-<svg fill="none" stroke-width="2" viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="10"/>
-<polygon points="10,8 16,12 10,16"/>
-</svg>
-Mídias
-</div>
-</div>
-
-<div class="post-card">
-
-<div class="post-header">
-<span class="user">Nathalia</span>
-<span class="dots">⋯</span>
-</div>
-
-<div class="post-image">
-<svg fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24">
-<rect x="3" y="11" width="18" height="10" rx="2"/>
-<path d="M7 11V7a5 5 0 0110 0v4"/>
-</svg>
-</div>
-
-<div class="post-actions">
-<svg fill="none" stroke-width="2" viewBox="0 0 24 24">
-<path d="M20.8 4.6c-1.5-1.4-3.8-1.4-5.3 0L12 8.1 8.5 4.6c-1.5-1.4-3.8-1.4-5.3 0-1.6 1.5-1.6 3.9 0 5.4l8.8 9 8.8-9c1.6-1.5 1.6-3.9 0-5.4z"/>
-</svg>
-
-<svg fill="none" stroke-width="2" viewBox="0 0 24 24">
-<path d="M21 15a4 4 0 01-4 4H7l-4 4V7a4 4 0 014-4h10a4 4 0 014 4z"/>
-</svg>
-
-<svg fill="none" stroke-width="2" viewBox="0 0 24 24">
-<path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
-</svg>
-</div>
-
-</div>
-
-<div class="lock-area">
-<svg fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24">
-<rect x="3" y="11" width="18" height="10" rx="2"/>
-<path d="M7 11V7a5 5 0 0110 0v4"/>
-</svg>
-
-<div class="lock-stats">
-📸 342 • 🎬 128 • ❤️ 24.8k
-</div>
-</div>
-
-</div>
+  </div>
 
 </div>
 
 <script>
 function toggleText(){
-let short="Aqui serei sua bebê de 19 aninhos... conteúdo exclusivo e interação privada.";
-let full="Aqui serei sua bebê de 19 aninhos bem ousada ❌ realizo chamadas e interação privada 🔥 vídeos exclusivos e conteúdos diferenciados 🤤 e tudo mais que você pode imaginar! Aqui tem de tudo!!! 💁🏼‍♀️ Também tem muito chat privado com fotos e vídeos exclusivos que mando pra você 🔞 Conteúdo premium, gosto de conversar no chat e respondo assim que assinar, aqui você vai ver de tudo e vai se apaixonar!";
-let text=document.getElementById("text");
-let btn=document.querySelector(".vermais");
+  let shortText=document.getElementById("shortText");
+  let fullText=document.getElementById("fullText");
+  let btn=document.getElementById("toggleBtn");
 
-if(text.innerHTML===short){
-text.innerHTML=full;
-btn.innerHTML=" Ver menos";
-}else{
-text.innerHTML=short;
-btn.innerHTML=" Ver mais";
-}
+  if(fullText.style.display==="none"){
+    fullText.style.display="inline";
+    shortText.style.display="none";
+    btn.innerText="Ler menos";
+  }else{
+    fullText.style.display="none";
+    shortText.style.display="inline";
+    btn.innerText="Ler mais";
+  }
 }
 </script>
 
