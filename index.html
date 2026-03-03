@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Área Exclusiva</title>
+<title>Sua Marca</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -11,145 +11,185 @@
 body{
   font-family:Poppins,sans-serif;
   background:#000;
-  color:white;
+  color:#fff;
 }
 
-/* HEADER */
-.header{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:15px;
-  background:#000;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:10;
-}
-.brand{
-  font-weight:700;
-  font-size:20px;
-}
-.btn-login{
-  background:linear-gradient(90deg,#ff8c5a,#ffb199);
-  padding:8px 18px;
-  border-radius:25px;
-  font-size:14px;
+/* PADRÃO CARD */
+.card{
+  background:#0D0D0D;
+  margin:16px;
+  border-radius:18px;
+  overflow:hidden;
 }
 
-/* COVER */
+/* ========== BLOCO 1 ========== */
+
 .cover{
-  margin-top:60px;
-  height:200px;
+  height:140px;
   background:url('capa.jpg') center/cover no-repeat;
 }
 
-/* PROFILE */
-.profile{
+.profile-area{
   text-align:center;
-  margin-top:-60px;
+  padding:0 16px 24px;
+  margin-top:-48px;
 }
-.profile img{
-  width:120px;
-  height:120px;
+
+.profile-img{
+  width:96px;
+  height:96px;
   border-radius:50%;
   border:4px solid #000;
 }
-.name{
-  font-size:22px;
+
+.name-row{
+  margin-top:10px;
+  font-size:18px;
   font-weight:600;
-  margin-top:10px;
-}
-.username{
-  color:#aaa;
-  font-size:14px;
-}
-.bio{
-  padding:0 20px;
-  margin-top:10px;
-  font-size:14px;
-  color:#ccc;
 }
 
-/* COUNTERS */
-.stats{
+.verified{
+  color:#ff8c5a;
+  font-size:14px;
+}
+
+.username{
+  font-size:13px;
+  color:#8A8A8A;
+  margin-top:4px;
+}
+
+.description{
+  font-size:14px;
+  line-height:1.4;
+  color:#CFCFCF;
+  margin-top:12px;
+}
+
+.city{
+  font-size:13px;
+  color:#9A9A9A;
+  margin-top:8px;
+}
+
+.socials{
   display:flex;
   justify-content:center;
-  gap:25px;
-  margin-top:15px;
-  color:#aaa;
+  gap:16px;
+  margin-top:10px;
   font-size:13px;
+  color:#ff8c5a;
 }
 
-/* ACTION BUTTONS */
 .actions{
   display:flex;
   justify-content:center;
-  gap:15px;
-  margin:20px 0;
-}
-.pill{
-  padding:12px 25px;
-  background:#111;
-  border-radius:30px;
-  font-size:14px;
+  gap:12px;
+  margin-top:18px;
 }
 
-/* PLANS */
-.section{
-  padding:0 20px;
-}
-.plan{
-  margin-top:15px;
-  background:linear-gradient(90deg,#ff8c5a,#ffb199);
-  padding:18px;
-  border-radius:18px;
-  display:flex;
-  justify-content:space-between;
-  font-weight:600;
-  color:#000;
-  cursor:pointer;
-}
-
-/* FEED BLOQUEADO */
-.feed{
-  margin:30px 20px;
-}
-.post{
-  height:120px;
-  background:url('post.jpg') center/cover;
-  border-radius:15px;
-  margin-bottom:15px;
-  filter:blur(8px);
-  position:relative;
-}
-.lock{
-  position:absolute;
-  inset:0;
+.btn{
+  height:44px;
+  padding:0 22px;
+  border-radius:22px;
   display:flex;
   align-items:center;
   justify-content:center;
+  font-size:14px;
   font-weight:600;
-  background:rgba(0,0,0,0.6);
+  cursor:pointer;
 }
 
-/* BOTTOM NAV */
-.bottom{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  background:#000;
+.btn-pix{
+  background:linear-gradient(90deg,#ff8c5a,#ffb199);
+  color:#000;
+}
+
+.btn-chat{
+  background:#1A1A1A;
+  border:1px solid #262626;
+}
+
+/* ========== BLOCO 2 ========== */
+
+.section-title{
+  font-size:16px;
+  font-weight:600;
+  padding:16px;
+}
+
+.plan{
+  height:64px;
+  margin:0 16px 12px;
+  padding:0 18px;
+  border-radius:16px;
   display:flex;
-  justify-content:space-around;
-  padding:12px 0;
-  border-top:1px solid #111;
-}
-.bottom div{
-  font-size:12px;
-  color:#888;
+  justify-content:space-between;
+  align-items:center;
+  background:linear-gradient(90deg,#ff8c5a,#ffb199);
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
 }
 
-/* MODAL PIX */
+/* ========== BLOCO 3 ========== */
+
+.post-stats{
+  display:flex;
+  justify-content:space-between;
+  padding:16px;
+  font-size:13px;
+  color:#9A9A9A;
+}
+
+.mini-profile{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 16px 12px;
+}
+
+.mini-profile img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.mini-name{
+  font-size:14px;
+  font-weight:600;
+}
+
+.mini-user{
+  font-size:12px;
+  color:#8A8A8A;
+}
+
+.locked-post{
+  height:220px;
+  margin:0 16px 16px;
+  border-radius:16px;
+  background:url('post.jpg') center/cover;
+  position:relative;
+  overflow:hidden;
+  filter:blur(6px);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  font-size:13px;
+  font-weight:600;
+  filter:none;
+}
+
+/* ========== MODAL PIX ========== */
+
 .modal{
   display:none;
   position:fixed;
@@ -158,116 +198,107 @@ body{
   align-items:center;
   justify-content:center;
 }
+
 .modal-content{
   background:#111;
-  padding:25px;
-  border-radius:20px;
   width:90%;
   max-width:350px;
+  padding:24px;
+  border-radius:18px;
   text-align:center;
 }
+
 .modal img{
   width:200px;
   margin:15px 0;
 }
+
 .pix-code{
   background:#000;
   padding:10px;
   border-radius:10px;
   font-size:12px;
   word-break:break-all;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
+
 .btn-copy{
   background:linear-gradient(90deg,#ff8c5a,#ffb199);
-  padding:12px;
-  border-radius:25px;
   border:none;
+  padding:12px;
+  border-radius:22px;
   font-weight:600;
   width:100%;
-}
-.close{
-  margin-top:15px;
-  font-size:13px;
-  color:#888;
 }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="brand">SUA MARCA</div>
-  <div class="btn-login">Entrar</div>
-</div>
-
-<div class="cover"></div>
-
-<div class="profile">
-  <img src="perfil.jpg">
-  <div class="name">SEU NOME ✔</div>
-  <div class="username">@seuuser</div>
-  <div class="bio">Descrição estratégica que gera desejo e curiosidade.</div>
-</div>
-
-<div class="stats">
-  <div>15 Posts</div>
-  <div>24 Mídias</div>
-  <div>38K Likes</div>
-</div>
-
-<div class="actions">
-  <div class="pill">Mimo</div>
-  <div class="pill">Chat</div>
-</div>
-
-<div class="section">
-  <div class="plan" onclick="openModal('39,90')">
-    <span>1 Mês</span>
-    <span>R$ 39,90</span>
-  </div>
-
-  <div class="plan" onclick="openModal('89,90')">
-    <span>6 Meses Promo</span>
-    <span>R$ 89,90</span>
-  </div>
-
-  <div class="plan" onclick="openModal('149,90')">
-    <span>12 Meses VIP</span>
-    <span>R$ 149,90</span>
+<!-- BLOCO 1 -->
+<div class="card">
+  <div class="cover"></div>
+  <div class="profile-area">
+    <img src="perfil.jpg" class="profile-img">
+    <div class="name-row">SEU NOME <span class="verified">✔</span></div>
+    <div class="username">@seuuser</div>
+    <div class="description">Copy estratégica forte aqui.</div>
+    <div class="city">📍 Sua Cidade</div>
+    <div class="socials">
+      <div>Instagram</div>
+      <div>Twitter</div>
+    </div>
+    <div class="actions">
+      <div class="btn btn-pix" onclick="openModal()">Mimo (Pix)</div>
+      <div class="btn btn-chat" onclick="window.open('https://wa.me/SEUNUMERO')">Chat</div>
+    </div>
   </div>
 </div>
 
-<div class="feed">
-  <div class="post"><div class="lock">Conteúdo Bloqueado 🔒</div></div>
-  <div class="post"><div class="lock">Conteúdo Bloqueado 🔒</div></div>
+<!-- BLOCO 2 -->
+<div class="card">
+  <div class="section-title">Assinaturas</div>
+  <div class="plan" onclick="openModal()">1 Mês <span>R$ 39,90</span></div>
+  <div class="plan" onclick="openModal()">6 Meses Promo <span>R$ 89,90</span></div>
+  <div class="plan" onclick="openModal()">12 Meses VIP <span>R$ 149,90</span></div>
 </div>
 
-<div class="bottom">
-  <div>Mural</div>
-  <div style="color:#ff8c5a">Feed</div>
-  <div>Em Alta</div>
-  <div>Chat</div>
+<!-- BLOCO 3 -->
+<div class="card">
+  <div class="post-stats">
+    <span>15 Postagens</span>
+    <span>15 Mídias</span>
+  </div>
+
+  <div class="mini-profile">
+    <img src="perfil.jpg">
+    <div>
+      <div class="mini-name">SEU NOME <span class="verified">✔</span></div>
+      <div class="mini-user">@seuuser</div>
+    </div>
+  </div>
+
+  <div class="locked-post">
+    <div class="overlay">
+      <div>📸 8</div>
+      <div>🎥 3</div>
+      <div>❤️ 2.4K</div>
+    </div>
+  </div>
 </div>
 
-<!-- MODAL -->
+<!-- MODAL PIX -->
 <div class="modal" id="pixModal">
   <div class="modal-content">
     <h3>Pagamento via Pix</h3>
     <img src="qrcode.png">
-    <div class="pix-code" id="pixCode">
-      SUA CHAVE PIX AQUI
-    </div>
+    <div class="pix-code" id="pixCode">SUA CHAVE PIX AQUI</div>
     <button class="btn-copy" onclick="copyPix()">Copiar código Pix</button>
-    <div class="close" onclick="closeModal()">Fechar</div>
   </div>
 </div>
 
 <script>
-function openModal(valor){
+function openModal(){
   document.getElementById("pixModal").style.display="flex";
-}
-function closeModal(){
-  document.getElementById("pixModal").style.display="none";
 }
 function copyPix(){
   let code=document.getElementById("pixCode").innerText;
