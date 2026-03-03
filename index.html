@@ -1,306 +1,356 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfil</title>
+<title>Sua Marca</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-  margin:0;
-  font-family:'Poppins', sans-serif;
-  background:#0e0e0f;
+  font-family:Poppins,sans-serif;
+  background:#000;
   color:#fff;
 }
 
-/* ===== HEADER CINZA ===== */
-.header{
-  background:#1c1c1e;
-  height:60px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+/* CARD BASE */
+.card{
+  background:#0D0D0D;
+  margin:16px;
+  border-radius:18px;
+  overflow:hidden;
 }
 
 /* ===== BLOCO 1 ===== */
-.profile-container{
-  padding:16px;
-}
 
 .cover{
-  width:100%;
   height:110px;
-  background:#2a2a2d;
-  border-radius:12px;
-  position:relative;
+  background:url('capa.jpg') center/cover no-repeat;
 }
 
-.profile-box{
+.profile-area{
+  padding:0 16px 20px;
+}
+
+.profile-header{
   display:flex;
-  align-items:flex-start;
-  margin-top:-45px;
+  align-items:flex-end;
+  gap:14px;
+  margin-top:-40px;
 }
 
-.profile-pic-wrapper{
-  position:relative;
-}
-
-.profile-pic{
+.profile-img{
   width:90px;
   height:90px;
   border-radius:50%;
-  border:4px solid #0e0e0f;
-  background:#333;
+  border:4px solid #000;
 }
 
-.online{
-  position:absolute;
-  bottom:8px;
-  right:6px;
-  width:14px;
-  height:14px;
-  background:#2ecc71;
-  border-radius:50%;
-  border:2px solid #0e0e0f;
-}
-
-.profile-info{
-  margin-left:14px;
-  text-align:left;
-}
-
-.name{
-  font-weight:600;
+.name-row{
   font-size:18px;
+  font-weight:600;
 }
 
 .verified{
-  color:#4da6ff;
+  color:#ff8c5a;
   font-size:14px;
-  margin-left:4px;
 }
 
 .username{
-  font-size:14px;
-  color:#aaa;
-}
-
-.stats{
   font-size:13px;
+  color:#8A8A8A;
   margin-top:4px;
-  color:#bbb;
 }
 
-/* ===== DESCRIÇÃO ===== */
 .description{
-  margin-top:14px;
   font-size:14px;
   line-height:1.4;
+  color:#CFCFCF;
+  margin-top:14px;
 }
 
-.more{
-  color:#4da6ff;
-  cursor:pointer;
+.city{
   font-size:13px;
+  color:#9A9A9A;
+  margin-top:8px;
 }
 
-/* ===== REDES ===== */
+/* REDES SOCIAIS */
+
 .socials{
   display:flex;
   gap:16px;
-  margin-top:14px;
+  margin-top:12px;
 }
 
 .social-icon{
-  width:26px;
-  height:26px;
-  color:#fff;
+  width:28px;
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#ff8c5a;
+  transition:0.2s;
 }
 
-/* ===== BOTÕES BLOCO 1 ===== */
-.action-buttons{
-  margin-top:16px;
+.social-icon svg{
+  width:22px;
+  height:22px;
+}
+
+.social-icon:hover{
+  transform:scale(1.1);
+  opacity:0.8;
+}
+
+/* BOTÕES */
+
+.actions{
   display:flex;
-  gap:10px;
+  gap:12px;
+  margin-top:18px;
 }
 
 .btn{
-  flex:1;
-  padding:10px;
-  border-radius:8px;
-  text-align:center;
-  font-weight:500;
-  font-size:14px;
-  cursor:pointer;
-}
-
-.mimo{
-  background:#4da6ff;
-}
-
-.chat{
-  background:#4da6ff;
-}
-
-/* ===== BLOCO 2 ===== */
-.plans{
-  padding:16px;
-  margin-top:20px;
-}
-
-.plan{
-  background:#1c1c1e;
-  padding:14px;
-  border-radius:10px;
-  margin-bottom:10px;
-  text-align:center;
-}
-
-.promo{
-  font-size:13px;
-  color:#4da6ff;
-  margin-top:6px;
-}
-
-/* ===== BLOCO 3 ===== */
-.posts-section{
-  padding:16px;
-}
-
-.post-tabs{
+  height:42px;
+  padding:0 18px;
+  border-radius:22px;
   display:flex;
-  gap:12px;
-}
-
-.tab{
-  background:#1c1c1e;
-  padding:8px 14px;
-  border-radius:20px;
-  font-size:13px;
-  cursor:pointer;
-}
-
-.locked{
-  margin-top:20px;
-  background:#fff;
-  border-radius:12px;
-  height:220px;
-  display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.btn-pix{
+  background:linear-gradient(90deg,#ff8c5a,#ffb199);
   color:#000;
 }
 
-.lock-icon{
-  font-size:40px;
+.btn-chat{
+  background:#1A1A1A;
+  border:1px solid #262626;
 }
 
-.lock-stats{
-  margin-top:12px;
+/* ===== BLOCO 2 ===== */
+
+.section-title{
+  font-size:16px;
+  font-weight:600;
+  padding:16px;
+}
+
+.plan{
+  height:64px;
+  margin:0 16px 12px;
+  padding:0 18px;
+  border-radius:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:linear-gradient(90deg,#ff8c5a,#ffb199);
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ===== BLOCO 3 ===== */
+
+.post-stats{
+  display:flex;
+  justify-content:space-between;
+  padding:16px;
+  font-size:13px;
+  color:#9A9A9A;
+}
+
+.mini-profile{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 16px 12px;
+}
+
+.mini-profile img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.mini-name{
   font-size:14px;
+  font-weight:600;
+}
+
+.mini-user{
+  font-size:12px;
+  color:#8A8A8A;
+}
+
+.locked-post{
+  height:220px;
+  margin:0 16px 16px;
+  border-radius:16px;
+  background:url('post.jpg') center/cover;
+  position:relative;
+  overflow:hidden;
+  filter:blur(6px);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  font-size:13px;
+  font-weight:600;
+  filter:none;
+}
+
+/* ===== MODAL PIX ===== */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-content{
+  background:#111;
+  width:90%;
+  max-width:350px;
+  padding:24px;
+  border-radius:18px;
+  text-align:center;
+}
+
+.modal img{
+  width:200px;
+  margin:15px 0;
+}
+
+.pix-code{
+  background:#000;
+  padding:10px;
+  border-radius:10px;
+  font-size:12px;
+  word-break:break-all;
+  margin-bottom:12px;
+}
+
+.btn-copy{
+  background:linear-gradient(90deg,#ff8c5a,#ffb199);
+  border:none;
+  padding:12px;
+  border-radius:22px;
+  font-weight:600;
+  width:100%;
 }
 </style>
 </head>
-
 <body>
 
-<div class="header">
-  <!-- SUA LOGO PNG AQUI -->
-</div>
-
-<div class="profile-container">
-
+<!-- BLOCO 1 -->
+<div class="card">
   <div class="cover"></div>
+  <div class="profile-area">
 
-  <div class="profile-box">
-    <div class="profile-pic-wrapper">
-      <div class="profile-pic"></div>
-      <div class="online"></div>
+    <div class="profile-header">
+      <img src="perfil.jpg" class="profile-img">
+      <div>
+        <div class="name-row">SEU NOME <span class="verified">✔</span></div>
+        <div class="username">@seuuser</div>
+      </div>
     </div>
 
-    <div class="profile-info">
-      <div class="name">Seu Nome <span class="verified">✔</span></div>
-      <div class="username">@seuuser</div>
-      <div class="stats">📸 15 | 🎥 15 | ❤️ 1.2k</div>
+    <div class="description">
+      Copy estratégica forte aqui. Algo que gere curiosidade e desejo imediato.
     </div>
+
+    <div class="city">📍 Sua Cidade</div>
+
+    <div class="socials">
+      <a href="https://instagram.com/seuuser" target="_blank" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+          <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
+        </svg>
+      </a>
+
+      <a href="https://tiktok.com/@seuuser" target="_blank" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16.5 3c.3 2.1 1.8 3.7 3.5 4v3.1c-1.3-.1-2.6-.6-3.5-1.4v6.3a5 5 0 1 1-5-5c.3 0 .6 0 .9.1v3.2a2 2 0 1 0 1.6 2V3h2.5z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="actions">
+      <div class="btn btn-pix" onclick="openModal()">Mimo (Pix)</div>
+      <div class="btn btn-chat" onclick="window.open('https://wa.me/SEUNUMERO')">Chat</div>
+    </div>
+
   </div>
-
-  <div class="description">
-    <span id="shortText">
-      Aqui serei sua bebê de 19 aninhos bem putinha...
-    </span>
-
-    <span id="fullText" style="display:none;">
-      Aqui serei sua bebê de 19 aninhos bem putinha ❌ realizo chamadas, seexting, meus vídeos contém sexo explícito mostrando tudo, bem amador 🔥 vídeos mamando, punheta guiada, dando muito minha bucetinha até arder 🤤 e tudo mais que você pode imaginar! Aqui tem de tudo!!! Novinha da bucetinha apertadinha 💁🏼‍♀️ AQUI TAMBÉM TEM MUITO CHAT PRIVADO COM FOTOS E VÍDEOS EXCLUSIVOS QUE MANDO PRA VOCÊ, COMO VOCÊ PEDIR 🔞 | Conteúdo pesado MESMO, gosto de conversar no chat e te respondo na hora que assinar, aqui você vai ver de tudo e vai se apaixonar!
-    </span>
-
-    <span class="more" onclick="toggleText()" id="toggleBtn">Ver mais</span>
-  </div>
-
-  <div style="margin-top:10px; font-size:13px; color:#bbb;">
-    São Paulo - SP
-  </div>
-
-  <div class="socials">
-    <svg class="social-icon" viewBox="0 0 24 24" fill="white">
-      <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6-2a1 1 0 100 2 1 1 0 000-2z"/>
-    </svg>
-
-    <svg class="social-icon" viewBox="0 0 24 24" fill="white">
-      <path d="M16 1H8v14h8V1zm2 16H6v2h12v-2z"/>
-    </svg>
-  </div>
-
-  <div class="action-buttons">
-    <div class="btn mimo">💰 Mimo</div>
-    <div class="btn chat">💬 Chat</div>
-  </div>
-
 </div>
 
 <!-- BLOCO 2 -->
-<div class="plans">
-  <div class="plan">
-    Plano Mensal - R$29,90
-    <div class="promo">Promoções</div>
-  </div>
-  <div class="plan">Plano Trimestral - R$79,90</div>
-  <div class="plan">Plano Vitalício - R$149,90</div>
+<div class="card">
+  <div class="section-title">Assinaturas</div>
+  <div class="plan" onclick="openModal()">1 Mês <span>R$ 39,90</span></div>
+  <div class="plan" onclick="openModal()">6 Meses Promo <span>R$ 89,90</span></div>
+  <div class="plan" onclick="openModal()">12 Meses VIP <span>R$ 149,90</span></div>
 </div>
 
 <!-- BLOCO 3 -->
-<div class="posts-section">
-
-  <div class="post-tabs">
-    <div class="tab">📸 Postagens</div>
-    <div class="tab">🎥 Mídias</div>
+<div class="card">
+  <div class="post-stats">
+    <span>15 Postagens</span>
+    <span>15 Mídias</span>
   </div>
 
-  <div class="locked">
-    <div class="lock-icon">🔒</div>
-    <div class="lock-stats">
-      📸 15 | 🎥 15 | ❤️ 1.2k
+  <div class="mini-profile">
+    <img src="perfil.jpg">
+    <div>
+      <div class="mini-name">SEU NOME <span class="verified">✔</span></div>
+      <div class="mini-user">@seuuser</div>
     </div>
   </div>
 
+  <div class="locked-post">
+    <div class="overlay">
+      <div>📸 8</div>
+      <div>🎥 3</div>
+      <div>❤️ 2.4K</div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PIX -->
+<div class="modal" id="pixModal">
+  <div class="modal-content">
+    <h3>Pagamento via Pix</h3>
+    <img src="qrcode.png">
+    <div class="pix-code" id="pixCode">SUA CHAVE PIX AQUI</div>
+    <button class="btn-copy" onclick="copyPix()">Copiar código Pix</button>
+  </div>
 </div>
 
 <script>
-function toggleText(){
-  var shortText = document.getElementById("shortText");
-  var fullText = document.getElementById("fullText");
-  var btn = document.getElementById("toggleBtn");
-
-  if(fullText.style.display === "none"){
-    fullText.style.display = "inline";
-    shortText.style.display = "none";
-    btn.innerText = "Ver menos";
-  }else{
-    fullText.style.display = "none";
-    shortText.style.display = "inline";
-    btn.innerText = "Ver mais";
-  }
+function openModal(){
+  document.getElementById("pixModal").style.display="flex";
+}
+function copyPix(){
+  let code=document.getElementById("pixCode").innerText;
+  navigator.clipboard.writeText(code);
+  alert("Código Pix copiado!");
 }
 </script>
 
