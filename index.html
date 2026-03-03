@@ -3,93 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfil Premium</title>
+<title>Perfil</title>
 
 <style>
-:root{
-  --bg:#0f0f12;
-  --card:#18181c;
-  --soft:#232329;
-  --border:#26262c;
-  --accent:#ff8c5a;
-  --text:#ffffff;
-  --muted:#a0a0a8;
-}
-
-*{box-sizing:border-box}
-
 body{
   margin:0;
-  background:var(--bg);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;
-  color:var(--text);
+  font-family:'Poppins', sans-serif;
+  background:#0e0e0f;
+  color:#fff;
 }
 
-/* HEADER */
+/* ===== HEADER CINZA ===== */
 .header{
-  height:64px;
-  background:linear-gradient(to bottom,#1a1a1f,#141418);
+  background:#1c1c1e;
+  height:60px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-bottom:1px solid var(--border);
 }
 
-/* CONTAINER */
-.container{
-  padding:20px;
-  max-width:520px;
-  margin:auto;
+/* ===== BLOCO 1 ===== */
+.profile-container{
+  padding:16px;
 }
 
-/* CARD BASE */
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:18px;
-  margin-bottom:20px;
-}
-
-/* COVER */
 .cover{
-  height:140px;
-  border-radius:16px;
-  background:linear-gradient(135deg,#2b2b31,#1c1c22);
-}
-
-/* PROFILE */
-.profile-row{
-  display:flex;
-  margin-top:-60px;
-}
-
-.avatar-wrap{
+  width:100%;
+  height:110px;
+  background:#2a2a2d;
+  border-radius:12px;
   position:relative;
 }
 
-.avatar{
-  width:110px;
-  height:110px;
+.profile-box{
+  display:flex;
+  align-items:flex-start;
+  margin-top:-45px;
+}
+
+.profile-pic-wrapper{
+  position:relative;
+}
+
+.profile-pic{
+  width:90px;
+  height:90px;
   border-radius:50%;
+  border:4px solid #0e0e0f;
   background:#333;
-  border:4px solid var(--bg);
 }
 
 .online{
   position:absolute;
-  bottom:10px;
-  right:10px;
-  width:16px;
-  height:16px;
+  bottom:8px;
+  right:6px;
+  width:14px;
+  height:14px;
   background:#2ecc71;
   border-radius:50%;
-  border:3px solid var(--bg);
+  border:2px solid #0e0e0f;
 }
 
 .profile-info{
-  margin-left:16px;
-  margin-top:50px;
+  margin-left:14px;
+  text-align:left;
 }
 
 .name{
@@ -98,291 +75,94 @@ body{
 }
 
 .verified{
-  color:var(--accent);
+  color:#4da6ff;
   font-size:14px;
+  margin-left:4px;
 }
 
 .username{
-  color:var(--muted);
   font-size:14px;
+  color:#aaa;
 }
 
 .stats{
-  margin-top:6px;
   font-size:13px;
-  color:var(--muted);
+  margin-top:4px;
+  color:#bbb;
 }
 
-/* DESCRIPTION */
+/* ===== DESCRIÇÃO ===== */
 .description{
-  margin-top:16px;
+  margin-top:14px;
   font-size:14px;
-  line-height:1.5;
+  line-height:1.4;
 }
 
 .more{
-  color:var(--accent);
+  color:#4da6ff;
   cursor:pointer;
   font-size:13px;
 }
 
-/* BUTTONS */
-.button-row{
+/* ===== REDES ===== */
+.socials{
   display:flex;
-  gap:12px;
-  margin-top:18px;
+  gap:16px;
+  margin-top:14px;
+}
+
+.social-icon{
+  width:26px;
+  height:26px;
+  color:#fff;
+}
+
+/* ===== BOTÕES BLOCO 1 ===== */
+.action-buttons{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
 }
 
 .btn{
   flex:1;
-  padding:14px;
-  border-radius:14px;
+  padding:10px;
+  border-radius:8px;
   text-align:center;
   font-weight:500;
-  cursor:pointer;
-  background:var(--accent);
-  transition:.2s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(255,140,90,.35);
-}
-
-/* PLANS */
-.plan{
-  background:var(--soft);
-  border-radius:14px;
-  padding:16px;
-  margin-bottom:12px;
-  border:1px solid var(--border);
-  cursor:pointer;
-  transition:.2s;
-}
-
-.plan:hover{
-  border-color:var(--accent);
-}
-
-.promo{
-  font-size:13px;
-  color:var(--accent);
-  margin-top:6px;
-}
-
-/* TABS */
-.tabs{
-  display:flex;
-  gap:12px;
-}
-
-.tab{
-  background:var(--soft);
-  padding:10px 16px;
-  border-radius:30px;
-  font-size:13px;
-  border:1px solid var(--border);
-}
-
-/* LOCKED AREA */
-.locked{
-  margin-top:20px;
-  height:240px;
-  border-radius:16px;
-  background:#ffffff;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  color:#000;
-}
-
-.locked span{
-  margin-top:12px;
   font-size:14px;
+  cursor:pointer;
 }
 
-/* PAYMENT MODAL */
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.75);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+.mimo{
+  background:#4da6ff;
 }
 
-.modal-box{
-  background:var(--card);
-  width:100%;
-  max-width:400px;
-  border-radius:20px;
-  padding:24px;
-  border:1px solid var(--border);
+.chat{
+  background:#4da6ff;
 }
 
-.option{
-  background:var(--soft);
+/* ===== BLOCO 2 ===== */
+.plans{
+  padding:16px;
+  margin-top:20px;
+}
+
+.plan{
+  background:#1c1c1e;
   padding:14px;
-  border-radius:12px;
-  margin-bottom:12px;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.option:hover{
-  background:var(--accent);
-}
-
-.pix-area{
-  display:none;
-  margin-top:14px;
+  border-radius:10px;
+  margin-bottom:10px;
   text-align:center;
-}
-
-.pix-code{
-  background:var(--soft);
-  padding:12px;
-  border-radius:12px;
-  font-size:12px;
-  word-break:break-all;
-  margin-top:12px;
-}
-
-.close{
-  margin-top:14px;
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-  cursor:pointer;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-  SUA MARCA AQUI
-</div>
-
-<div class="container">
-
-<div class="card">
-  <div class="cover"></div>
-
-  <div class="profile-row">
-    <div class="avatar-wrap">
-      <div class="avatar"></div>
-      <div class="online"></div>
-    </div>
-
-    <div class="profile-info">
-      <div class="name">Seu Nome <span class="verified">✔</span></div>
-      <div class="username">@seuuser</div>
-      <div class="stats">📸 15 | 🎥 15 | ❤️ 1.2k</div>
-    </div>
-  </div>
-
-  <div class="description">
-    <span id="shortText">Aqui serei sua bebê de 19 aninhos...</span>
-    <span id="fullText" style="display:none;">
-      Aqui serei sua bebê de 19 aninhos bem putinha ❌ realizo chamadas, seexting...
-    </span>
-    <span class="more" onclick="toggleText()" id="toggleBtn">Ver mais</span>
-  </div>
-
-  <div class="button-row">
-    <div class="btn" onclick="openModal()">💰 Mimo</div>
-    <div class="btn">💬 Chat</div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="plan" onclick="openModal()">Plano Mensal - R$29,90<div class="promo">Promoções</div></div>
-  <div class="plan" onclick="openModal()">Plano Trimestral - R$79,90</div>
-  <div class="plan" onclick="openModal()">Plano Vitalício - R$149,90</div>
-</div>
-
-<div class="card">
-  <div class="tabs">
-    <div class="tab">📸 Postagens</div>
-    <div class="tab">🎥 Mídias</div>
-  </div>
-
-  <div class="locked">
-    🔒
-    <span>📸 15 | 🎥 15 | ❤️ 1.2k</span>
-  </div>
-</div>
-
-</div>
-
-<div class="modal" id="modal">
-  <div class="modal-box">
-    <div class="option" onclick="showPix()">💳 Pix</div>
-    <div class="option" onclick="goCard()">💳 Cartão de Crédito</div>
-
-    <div class="pix-area" id="pixArea">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=SUA-CHAVE-PIX" width="180">
-      <div class="pix-code">SUA-CHAVE-PIX-AQUI</div>
-    </div>
-
-    <div class="close" onclick="closeModal()">Fechar</div>
-  </div>
-</div>
-
-<script>
-function toggleText(){
-  const shortText=document.getElementById("shortText");
-  const fullText=document.getElementById("fullText");
-  const btn=document.getElementById("toggleBtn");
-
-  if(fullText.style.display==="none"){
-    fullText.style.display="inline";
-    shortText.style.display="none";
-    btn.innerText="Ver menos";
-  }else{
-    fullText.style.display="none";
-    shortText.style.display="inline";
-    btn.innerText="Ver mais";
-  }
-}
-
-function openModal(){
-  document.getElementById("modal").style.display="flex";
-}
-
-function closeModal(){
-  document.getElementById("modal").style.display="none";
-  document.getElementById("pixArea").style.display="none";
-}
-
-function showPix(){
-  document.getElementById("pixArea").style.display="block";
-}
-
-function goCard(){
-  window.location.href="https://SEU-LINK-CARTAO.com";
-}
-</script>
-
-</body>
-</html>  cursor:pointer;
-  border:1px solid #2a2a2d;
-}
-
-.plan:hover{
-  border-color:#ff8c5a;
 }
 
 .promo{
   font-size:13px;
-  color:#ff8c5a;
+  color:#4da6ff;
   margin-top:6px;
 }
 
-/* BLOCO 3 */
+/* ===== BLOCO 3 ===== */
 .posts-section{
   padding:16px;
 }
@@ -398,7 +178,6 @@ function goCard(){
   border-radius:20px;
   font-size:13px;
   cursor:pointer;
-  border:1px solid #2a2a2d;
 }
 
 .locked{
@@ -414,70 +193,12 @@ function goCard(){
 }
 
 .lock-icon{
-  font-size:42px;
+  font-size:40px;
 }
 
 .lock-stats{
   margin-top:12px;
   font-size:14px;
-}
-
-/* POPUP PAGAMENTO */
-.payment-overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.75);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-
-.payment-box{
-  background:#1c1c1e;
-  width:90%;
-  max-width:380px;
-  padding:20px;
-  border-radius:14px;
-  text-align:center;
-  border:1px solid #2a2a2d;
-}
-
-.payment-option{
-  background:#2a2a2d;
-  padding:12px;
-  border-radius:8px;
-  margin-bottom:10px;
-  cursor:pointer;
-  font-weight:500;
-}
-
-.payment-option:hover{
-  background:#ff8c5a;
-}
-
-.pix-area{
-  display:none;
-  margin-top:12px;
-}
-
-.pix-code{
-  background:#2a2a2d;
-  padding:10px;
-  border-radius:8px;
-  font-size:12px;
-  word-break:break-all;
-  margin-top:10px;
-}
-
-.close-btn{
-  margin-top:14px;
-  font-size:13px;
-  color:#aaa;
-  cursor:pointer;
 }
 </style>
 </head>
@@ -509,9 +230,11 @@ function goCard(){
     <span id="shortText">
       Aqui serei sua bebê de 19 aninhos bem putinha...
     </span>
+
     <span id="fullText" style="display:none;">
       Aqui serei sua bebê de 19 aninhos bem putinha ❌ realizo chamadas, seexting, meus vídeos contém sexo explícito mostrando tudo, bem amador 🔥 vídeos mamando, punheta guiada, dando muito minha bucetinha até arder 🤤 e tudo mais que você pode imaginar! Aqui tem de tudo!!! Novinha da bucetinha apertadinha 💁🏼‍♀️ AQUI TAMBÉM TEM MUITO CHAT PRIVADO COM FOTOS E VÍDEOS EXCLUSIVOS QUE MANDO PRA VOCÊ, COMO VOCÊ PEDIR 🔞 | Conteúdo pesado MESMO, gosto de conversar no chat e te respondo na hora que assinar, aqui você vai ver de tudo e vai se apaixonar!
     </span>
+
     <span class="more" onclick="toggleText()" id="toggleBtn">Ver mais</span>
   </div>
 
@@ -519,23 +242,36 @@ function goCard(){
     São Paulo - SP
   </div>
 
+  <div class="socials">
+    <svg class="social-icon" viewBox="0 0 24 24" fill="white">
+      <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6-2a1 1 0 100 2 1 1 0 000-2z"/>
+    </svg>
+
+    <svg class="social-icon" viewBox="0 0 24 24" fill="white">
+      <path d="M16 1H8v14h8V1zm2 16H6v2h12v-2z"/>
+    </svg>
+  </div>
+
   <div class="action-buttons">
-    <div class="btn" onclick="openPayment()">💰 Mimo</div>
-    <div class="btn">💬 Chat</div>
+    <div class="btn mimo">💰 Mimo</div>
+    <div class="btn chat">💬 Chat</div>
   </div>
 
 </div>
 
+<!-- BLOCO 2 -->
 <div class="plans">
-  <div class="plan" onclick="openPayment()">
+  <div class="plan">
     Plano Mensal - R$29,90
     <div class="promo">Promoções</div>
   </div>
-  <div class="plan" onclick="openPayment()">Plano Trimestral - R$79,90</div>
-  <div class="plan" onclick="openPayment()">Plano Vitalício - R$149,90</div>
+  <div class="plan">Plano Trimestral - R$79,90</div>
+  <div class="plan">Plano Vitalício - R$149,90</div>
 </div>
 
+<!-- BLOCO 3 -->
 <div class="posts-section">
+
   <div class="post-tabs">
     <div class="tab">📸 Postagens</div>
     <div class="tab">🎥 Mídias</div>
@@ -543,65 +279,28 @@ function goCard(){
 
   <div class="locked">
     <div class="lock-icon">🔒</div>
-    <div class="lock-stats">📸 15 | 🎥 15 | ❤️ 1.2k</div>
-  </div>
-</div>
-
-<!-- POPUP -->
-<div class="payment-overlay" id="paymentModal">
-  <div class="payment-box">
-
-    <div style="font-size:18px; margin-bottom:16px;">
-      Escolha a forma de pagamento
+    <div class="lock-stats">
+      📸 15 | 🎥 15 | ❤️ 1.2k
     </div>
-
-    <div class="payment-option" onclick="showPix()">💳 Pix</div>
-    <div class="payment-option" onclick="goCard()">💳 Cartão de Crédito</div>
-
-    <div class="pix-area" id="pixBox">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=SUA-CHAVE-PIX-AQUI" width="180">
-      <div class="pix-code">
-        SUA-CHAVE-PIX-AQUI
-      </div>
-    </div>
-
-    <div class="close-btn" onclick="closePayment()">Fechar</div>
-
   </div>
+
 </div>
 
 <script>
 function toggleText(){
-  var shortText=document.getElementById("shortText");
-  var fullText=document.getElementById("fullText");
-  var btn=document.getElementById("toggleBtn");
+  var shortText = document.getElementById("shortText");
+  var fullText = document.getElementById("fullText");
+  var btn = document.getElementById("toggleBtn");
 
-  if(fullText.style.display==="none"){
-    fullText.style.display="inline";
-    shortText.style.display="none";
-    btn.innerText="Ver menos";
+  if(fullText.style.display === "none"){
+    fullText.style.display = "inline";
+    shortText.style.display = "none";
+    btn.innerText = "Ver menos";
   }else{
-    fullText.style.display="none";
-    shortText.style.display="inline";
-    btn.innerText="Ver mais";
+    fullText.style.display = "none";
+    shortText.style.display = "inline";
+    btn.innerText = "Ver mais";
   }
-}
-
-function openPayment(){
-  document.getElementById("paymentModal").style.display="flex";
-}
-
-function closePayment(){
-  document.getElementById("paymentModal").style.display="none";
-  document.getElementById("pixBox").style.display="none";
-}
-
-function showPix(){
-  document.getElementById("pixBox").style.display="block";
-}
-
-function goCard(){
-  window.location.href="https://SEU-LINK-CARTAO-AQUI.com";
 }
 </script>
 
