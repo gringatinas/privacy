@@ -3,67 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfil</title>
+<title>Perfil Premium</title>
 
 <style>
+:root{
+  --bg:#0f0f12;
+  --card:#18181c;
+  --soft:#232329;
+  --border:#26262c;
+  --accent:#ff8c5a;
+  --text:#ffffff;
+  --muted:#a0a0a8;
+}
+
+*{box-sizing:border-box}
+
 body{
   margin:0;
-  font-family:'Poppins', sans-serif;
-  background:#0e0e0f;
-  color:#fff;
+  background:var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;
+  color:var(--text);
 }
 
 /* HEADER */
 .header{
-  background:#1a1a1c;
-  height:60px;
+  height:64px;
+  background:linear-gradient(to bottom,#1a1a1f,#141418);
   display:flex;
   align-items:center;
   justify-content:center;
+  border-bottom:1px solid var(--border);
 }
 
-/* BLOCO 1 */
-.profile-container{
-  padding:16px;
+/* CONTAINER */
+.container{
+  padding:20px;
+  max-width:520px;
+  margin:auto;
 }
 
+/* CARD BASE */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:20px;
+}
+
+/* COVER */
 .cover{
-  width:100%;
-  height:120px;
-  background:#2a2a2d;
-  border-radius:12px;
+  height:140px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#2b2b31,#1c1c22);
 }
 
-.profile-box{
+/* PROFILE */
+.profile-row{
   display:flex;
-  margin-top:-50px;
+  margin-top:-60px;
 }
 
-.profile-pic-wrapper{
+.avatar-wrap{
   position:relative;
 }
 
-.profile-pic{
-  width:100px;
-  height:100px;
+.avatar{
+  width:110px;
+  height:110px;
   border-radius:50%;
-  border:4px solid #0e0e0f;
   background:#333;
+  border:4px solid var(--bg);
 }
 
 .online{
   position:absolute;
-  bottom:8px;
-  right:8px;
-  width:14px;
-  height:14px;
+  bottom:10px;
+  right:10px;
+  width:16px;
+  height:16px;
   background:#2ecc71;
   border-radius:50%;
-  border:2px solid #0e0e0f;
+  border:3px solid var(--bg);
 }
 
 .profile-info{
-  margin-left:14px;
+  margin-left:16px;
+  margin-top:50px;
 }
 
 .name{
@@ -72,80 +98,277 @@ body{
 }
 
 .verified{
-  color:#ff8c5a;
+  color:var(--accent);
   font-size:14px;
 }
 
 .username{
+  color:var(--muted);
   font-size:14px;
-  color:#aaa;
 }
 
 .stats{
+  margin-top:6px;
   font-size:13px;
-  margin-top:4px;
-  color:#bbb;
+  color:var(--muted);
 }
 
-/* DESCRIÇÃO */
+/* DESCRIPTION */
 .description{
-  margin-top:14px;
+  margin-top:16px;
   font-size:14px;
-  line-height:1.4;
+  line-height:1.5;
 }
 
 .more{
-  color:#ff8c5a;
+  color:var(--accent);
   cursor:pointer;
   font-size:13px;
 }
 
-/* REDES */
-.socials{
+/* BUTTONS */
+.button-row{
   display:flex;
-  gap:16px;
-  margin-top:14px;
-}
-
-.social-icon{
-  width:24px;
-  height:24px;
-  fill:#ff8c5a;
-  cursor:pointer;
-}
-
-/* BOTÕES */
-.action-buttons{
-  margin-top:16px;
-  display:flex;
-  gap:10px;
+  gap:12px;
+  margin-top:18px;
 }
 
 .btn{
   flex:1;
-  padding:12px;
-  border-radius:8px;
+  padding:14px;
+  border-radius:14px;
   text-align:center;
   font-weight:500;
-  font-size:14px;
   cursor:pointer;
-  background:#ff8c5a;
-  color:#fff;
+  background:var(--accent);
+  transition:.2s;
 }
 
-/* BLOCO 2 */
-.plans{
-  padding:16px;
-  margin-top:20px;
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(255,140,90,.35);
 }
 
+/* PLANS */
 .plan{
-  background:#1c1c1e;
-  padding:14px;
-  border-radius:10px;
-  margin-bottom:10px;
-  text-align:center;
+  background:var(--soft);
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:12px;
+  border:1px solid var(--border);
   cursor:pointer;
+  transition:.2s;
+}
+
+.plan:hover{
+  border-color:var(--accent);
+}
+
+.promo{
+  font-size:13px;
+  color:var(--accent);
+  margin-top:6px;
+}
+
+/* TABS */
+.tabs{
+  display:flex;
+  gap:12px;
+}
+
+.tab{
+  background:var(--soft);
+  padding:10px 16px;
+  border-radius:30px;
+  font-size:13px;
+  border:1px solid var(--border);
+}
+
+/* LOCKED AREA */
+.locked{
+  margin-top:20px;
+  height:240px;
+  border-radius:16px;
+  background:#ffffff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#000;
+}
+
+.locked span{
+  margin-top:12px;
+  font-size:14px;
+}
+
+/* PAYMENT MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-box{
+  background:var(--card);
+  width:100%;
+  max-width:400px;
+  border-radius:20px;
+  padding:24px;
+  border:1px solid var(--border);
+}
+
+.option{
+  background:var(--soft);
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:12px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.option:hover{
+  background:var(--accent);
+}
+
+.pix-area{
+  display:none;
+  margin-top:14px;
+  text-align:center;
+}
+
+.pix-code{
+  background:var(--soft);
+  padding:12px;
+  border-radius:12px;
+  font-size:12px;
+  word-break:break-all;
+  margin-top:12px;
+}
+
+.close{
+  margin-top:14px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  SUA MARCA AQUI
+</div>
+
+<div class="container">
+
+<div class="card">
+  <div class="cover"></div>
+
+  <div class="profile-row">
+    <div class="avatar-wrap">
+      <div class="avatar"></div>
+      <div class="online"></div>
+    </div>
+
+    <div class="profile-info">
+      <div class="name">Seu Nome <span class="verified">✔</span></div>
+      <div class="username">@seuuser</div>
+      <div class="stats">📸 15 | 🎥 15 | ❤️ 1.2k</div>
+    </div>
+  </div>
+
+  <div class="description">
+    <span id="shortText">Aqui serei sua bebê de 19 aninhos...</span>
+    <span id="fullText" style="display:none;">
+      Aqui serei sua bebê de 19 aninhos bem putinha ❌ realizo chamadas, seexting...
+    </span>
+    <span class="more" onclick="toggleText()" id="toggleBtn">Ver mais</span>
+  </div>
+
+  <div class="button-row">
+    <div class="btn" onclick="openModal()">💰 Mimo</div>
+    <div class="btn">💬 Chat</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="plan" onclick="openModal()">Plano Mensal - R$29,90<div class="promo">Promoções</div></div>
+  <div class="plan" onclick="openModal()">Plano Trimestral - R$79,90</div>
+  <div class="plan" onclick="openModal()">Plano Vitalício - R$149,90</div>
+</div>
+
+<div class="card">
+  <div class="tabs">
+    <div class="tab">📸 Postagens</div>
+    <div class="tab">🎥 Mídias</div>
+  </div>
+
+  <div class="locked">
+    🔒
+    <span>📸 15 | 🎥 15 | ❤️ 1.2k</span>
+  </div>
+</div>
+
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="option" onclick="showPix()">💳 Pix</div>
+    <div class="option" onclick="goCard()">💳 Cartão de Crédito</div>
+
+    <div class="pix-area" id="pixArea">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=SUA-CHAVE-PIX" width="180">
+      <div class="pix-code">SUA-CHAVE-PIX-AQUI</div>
+    </div>
+
+    <div class="close" onclick="closeModal()">Fechar</div>
+  </div>
+</div>
+
+<script>
+function toggleText(){
+  const shortText=document.getElementById("shortText");
+  const fullText=document.getElementById("fullText");
+  const btn=document.getElementById("toggleBtn");
+
+  if(fullText.style.display==="none"){
+    fullText.style.display="inline";
+    shortText.style.display="none";
+    btn.innerText="Ver menos";
+  }else{
+    fullText.style.display="none";
+    shortText.style.display="inline";
+    btn.innerText="Ver mais";
+  }
+}
+
+function openModal(){
+  document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+  document.getElementById("pixArea").style.display="none";
+}
+
+function showPix(){
+  document.getElementById("pixArea").style.display="block";
+}
+
+function goCard(){
+  window.location.href="https://SEU-LINK-CARTAO.com";
+}
+</script>
+
+</body>
+</html>  cursor:pointer;
   border:1px solid #2a2a2d;
 }
 
