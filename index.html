@@ -8,19 +8,30 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:#000;color:#fff}
+body{
+  font-family:Poppins,sans-serif;
+  background:#000;
+  color:#fff;
+}
 
-/* CARD */
-.card{background:#0D0D0D;margin:16px;border-radius:18px;overflow:hidden}
+/* CARD BASE */
+.card{
+  background:#0D0D0D;
+  margin:16px;
+  border-radius:18px;
+  overflow:hidden;
+}
 
-/* BLOCO 1 */
+/* ===== BLOCO 1 ===== */
 
 .cover{
-  height:150px;
+  height:140px;
   background:url('capa.jpg') center/cover no-repeat;
 }
 
-.profile-area{padding:0 16px 20px}
+.profile-area{
+  padding:0 16px 20px;
+}
 
 .profile-header{
   display:flex;
@@ -29,32 +40,28 @@ body{font-family:Poppins,sans-serif;background:#000;color:#fff}
   margin-top:-70px;
 }
 
-.profile-img-wrapper{
-  position:relative;
-}
-
 .profile-img{
-  width:100px;
-  height:100px;
+  width:90px;
+  height:90px;
   border-radius:50%;
   border:4px solid #000;
 }
 
-.online-dot{
-  width:16px;
-  height:16px;
-  background:#00ff66;
-  border-radius:50%;
-  position:absolute;
-  bottom:6px;
-  right:6px;
-  border:2px solid #000;
+.name-row{
+  font-size:18px;
+  font-weight:600;
 }
 
-.name-row{font-size:18px;font-weight:600}
-.verified{color:#ff8c5a;font-size:14px}
-.username{font-size:13px;color:#8A8A8A;margin-top:4px}
-.city{font-size:13px;color:#8A8A8A;margin-top:4px}
+.verified{
+  color:#ff8c5a;
+  font-size:14px;
+}
+
+.username{
+  font-size:13px;
+  color:#8A8A8A;
+  margin-top:4px;
+}
 
 .description{
   font-size:14px;
@@ -76,6 +83,7 @@ body{font-family:Poppins,sans-serif;background:#000;color:#fff}
   margin-top:12px;
   font-size:12px;
   color:#9A9A9A;
+  align-items:center;
 }
 
 .content-stats div{
@@ -85,12 +93,48 @@ body{font-family:Poppins,sans-serif;background:#000;color:#fff}
 }
 
 .content-stats svg{
-  width:15px;height:15px;stroke:#9A9A9A;fill:none;stroke-width:2;
+  width:15px;
+  height:15px;
+  stroke:#9A9A9A;
+  fill:none;
+  stroke-width:2;
+}
+
+/* REDES SOCIAIS */
+
+.socials{
+  display:flex;
+  gap:16px;
+  margin-top:12px;
+}
+
+.social-icon{
+  width:28px;
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#ff8c5a;
+  transition:0.2s;
+}
+
+.social-icon svg{
+  width:22px;
+  height:22px;
+}
+
+.social-icon:hover{
+  transform:scale(1.1);
+  opacity:0.8;
 }
 
 /* BOTÕES */
 
-.actions{display:flex;gap:12px;margin-top:18px}
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+}
 
 .btn{
   height:42px;
@@ -114,9 +158,13 @@ body{font-family:Poppins,sans-serif;background:#000;color:#fff}
   border:1px solid #262626;
 }
 
-/* BLOCO 2 */
+/* ===== BLOCO 2 ===== */
 
-.section-title{font-size:16px;font-weight:600;padding:16px}
+.section-title{
+  font-size:16px;
+  font-weight:600;
+  padding:16px;
+}
 
 .plan{
   height:64px;
@@ -132,109 +180,103 @@ body{font-family:Poppins,sans-serif;background:#000;color:#fff}
   cursor:pointer;
 }
 
-.plan.secondary{
-  background:#1A1A1A;
-  color:#fff;
-  border:1px solid #262626;
-}
+/* ===== BLOCO 3 ===== */
 
-/* BLOCO 3 */
-
-.tabs{
-  display:flex;
-  gap:10px;
-  padding:16px;
-}
-
-.tab{
-  flex:1;
-  background:#1A1A1A;
-  border:1px solid #262626;
-  border-radius:12px;
-  padding:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  font-size:13px;
-  cursor:pointer;
-}
-
-.tab svg{width:16px;height:16px;stroke:#9A9A9A;fill:none;stroke-width:2}
-
-.post-card{
-  margin:0 16px 16px;
-  background:#fff;
-  border-radius:16px;
-  overflow:hidden;
-  color:#000;
-}
-
-.post-header{
+.post-stats{
   display:flex;
   justify-content:space-between;
+  padding:16px;
+  font-size:13px;
+  color:#9A9A9A;
+}
+
+.mini-profile{
+  display:flex;
   align-items:center;
-  padding:12px;
+  gap:10px;
+  padding:0 16px 12px;
+}
+
+.mini-profile img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.mini-name{
+  font-size:14px;
   font-weight:600;
 }
 
-.post-img{
-  height:220px;
-  background:#f2f2f2;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.mini-user{
+  font-size:12px;
+  color:#8A8A8A;
 }
-
-.post-actions{
-  display:flex;
-  gap:16px;
-  padding:12px;
-}
-
-.post-actions svg{
-  width:22px;height:22px;stroke:#000;fill:none;stroke-width:2;
-}
-
-/* BLOQUEADO PREMIUM */
 
 .locked-post{
-  height:260px;
+  height:220px;
   margin:0 16px 16px;
   border-radius:16px;
-  background:#fff;
+  background:url('post.jpg') center/cover;
+  position:relative;
+  overflow:hidden;
+  filter:blur(6px);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
   display:flex;
-  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  font-size:13px;
+  font-weight:600;
+  filter:none;
+}
+
+/* ===== MODAL PIX ===== */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
   align-items:center;
   justify-content:center;
 }
 
-.lock-icon{
-  width:70px;
-  height:70px;
-  stroke:#000;
-  stroke-width:1.6;
-  fill:none;
-  opacity:0.3;
+.modal-content{
+  background:#111;
+  width:90%;
+  max-width:350px;
+  padding:24px;
+  border-radius:18px;
+  text-align:center;
 }
 
-.lock-stats{
-  display:flex;
-  gap:22px;
-  margin-top:20px;
-  font-size:13px;
-  color:#555;
-  opacity:0.8;
+.modal img{
+  width:200px;
+  margin:15px 0;
 }
 
-.lock-stats div{
-  display:flex;
-  align-items:center;
-  gap:6px;
+.pix-code{
+  background:#000;
+  padding:10px;
+  border-radius:10px;
+  font-size:12px;
+  word-break:break-all;
+  margin-bottom:12px;
 }
 
-.lock-stats svg{
-  width:16px;height:16px;stroke:#555;fill:none;stroke-width:2;
+.btn-copy{
+  background:linear-gradient(90deg,#ff8c5a,#ffb199);
+  border:none;
+  padding:12px;
+  border-radius:22px;
+  font-weight:600;
+  width:100%;
 }
 </style>
 </head>
@@ -246,44 +288,51 @@ body{font-family:Poppins,sans-serif;background:#000;color:#fff}
   <div class="profile-area">
 
     <div class="profile-header">
-      <div class="profile-img-wrapper">
-        <img src="perfil.jpg" class="profile-img">
-        <div class="online-dot"></div>
-      </div>
-
+      <img src="perfil.jpg" class="profile-img">
       <div>
         <div class="name-row">SEU NOME <span class="verified">✔</span></div>
         <div class="username">@seuuser</div>
-        <div class="city">📍 São Paulo - SP</div>
       </div>
     </div>
 
     <div class="description">
-      <span id="shortText">Perfil exclusivo com conteúdos diferenciados e interação privada...</span>
+      <span id="shortText">Copy estratégica forte aqui. Algo que gere curiosidade...</span>
       <span id="fullText" style="display:none;">
-        Perfil exclusivo com conteúdos diferenciados, interação privada e experiências únicas para assinantes. Atualizações frequentes e conexão direta.
+        Copy estratégica forte aqui. Algo que gere curiosidade e desejo imediato, criando conexão e despertando interesse contínuo pelo conteúdo exclusivo disponível no perfil.
       </span>
       <span class="read-more" onclick="toggleText()" id="toggleBtn">Ler mais</span>
     </div>
 
     <div class="content-stats">
       <div>
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"></circle>
+        </svg>
         283
       </div>
       <div>
-        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12"/></svg>
+        <svg viewBox="0 0 24 24">
+          <rect x="4" y="6" width="16" height="12"></rect>
+        </svg>
         470
       </div>
       <div>
-        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"/></svg>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"></path>
+        </svg>
         293K
       </div>
     </div>
 
+    <div class="city">📍 Sua Cidade</div>
+
+    <div class="socials">
+      <!-- suas redes aqui -->
+    </div>
+
     <div class="actions">
-      <div class="btn btn-pix">💲 Mimo</div>
-      <div class="btn btn-chat">💬 Chat</div>
+      <div class="btn btn-pix" onclick="openModal()">Mimo (Pix)</div>
+      <div class="btn btn-chat" onclick="window.open('https://wa.me/SEUNUMERO')">Chat</div>
     </div>
 
   </div>
@@ -292,64 +341,43 @@ body{font-family:Poppins,sans-serif;background:#000;color:#fff}
 <!-- BLOCO 2 -->
 <div class="card">
   <div class="section-title">Assinaturas</div>
-  <div class="plan">1 Mês <span>R$ 39,90</span></div>
-  <div class="plan secondary">Promoções</div>
-  <div class="plan">6 Meses Promo <span>R$ 89,90</span></div>
-  <div class="plan">12 Meses VIP <span>R$ 149,90</span></div>
+  <div class="plan" onclick="openModal()">1 Mês <span>R$ 39,90</span></div>
+  <div class="plan" onclick="openModal()">6 Meses Promo <span>R$ 89,90</span></div>
+  <div class="plan" onclick="openModal()">12 Meses VIP <span>R$ 149,90</span></div>
 </div>
 
 <!-- BLOCO 3 -->
 <div class="card">
-
-  <div class="tabs">
-    <div class="tab">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Postagens
-    </div>
-    <div class="tab">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
-      Mídias
-    </div>
+  <div class="post-stats">
+    <span>15 Postagens</span>
+    <span>15 Mídias</span>
   </div>
 
-  <div class="post-card">
-    <div class="post-header">
-      <span>SEU NOME</span>
-      <span>⋯</span>
-    </div>
-
-    <div class="post-img"></div>
-
-    <div class="post-actions">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 01-4 4H7l-4 4V7a4 4 0 014-4h10a4 4 0 014 4z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+  <div class="mini-profile">
+    <img src="perfil.jpg">
+    <div>
+      <div class="mini-name">SEU NOME <span class="verified">✔</span></div>
+      <div class="mini-user">@seuuser</div>
     </div>
   </div>
 
   <div class="locked-post">
-    <svg class="lock-icon" viewBox="0 0 24 24">
-      <rect x="5" y="10" width="14" height="10" rx="2"/>
-      <path d="M8 10V7a4 4 0 018 0v3"/>
-    </svg>
-
-    <div class="lock-stats">
-      <div>
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
-        283
-      </div>
-      <div>
-        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12"/></svg>
-        470
-      </div>
-      <div>
-        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"/></svg>
-        293K
-      </div>
+    <div class="overlay">
+      <div>📸 8</div>
+      <div>🎥 3</div>
+      <div>❤️ 2.4K</div>
     </div>
-
   </div>
+</div>
 
+<!-- MODAL PIX -->
+<div class="modal" id="pixModal">
+  <div class="modal-content">
+    <h3>Pagamento via Pix</h3>
+    <img src="qrcode.png">
+    <div class="pix-code" id="pixCode">SUA CHAVE PIX AQUI</div>
+    <button class="btn-copy" onclick="copyPix()">Copiar código Pix</button>
+  </div>
 </div>
 
 <script>
@@ -367,6 +395,15 @@ function toggleText(){
     shortText.style.display="inline";
     btn.innerText="Ler mais";
   }
+}
+
+function openModal(){
+  document.getElementById("pixModal").style.display="flex";
+}
+function copyPix(){
+  let code=document.getElementById("pixCode").innerText;
+  navigator.clipboard.writeText(code);
+  alert("Código Pix copiado!");
 }
 </script>
 
