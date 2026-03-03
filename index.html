@@ -378,6 +378,22 @@ body{
     </div>
   </div>
 </div>
+<script>
+function toggleText(){
+  var shortText = document.getElementById("shortText");
+  var fullText = document.getElementById("fullText");
+  var btn = document.getElementById("toggleBtn");
 
+  if(fullText.style.display === "none"){
+    fullText.style.display = "inline";
+    shortText.style.display = "none";
+    btn.innerText = "Ver menos";
+  }else{
+    fullText.style.display = "none";
+    shortText.style.display = "inline";
+    btn.innerText = "Ver mais";
+  }
+}
+</script>
 </body>
 </html>
