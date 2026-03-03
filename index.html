@@ -42,10 +42,15 @@ body{
 /* ===== BLOCO 1 ===== */
 
 .cover{
-  height:140px;
-  background:url('capa.jpg') center/cover no-repeat;
-  position:relative;
-  z-index:1;
+  height:160px;
+  overflow:hidden;
+}
+
+.cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 .profile-area{
@@ -61,12 +66,18 @@ body{
   z-index:2;
 }
 
-.profile-img{
+.profile-wrapper{
+  position:relative;
   width:90px;
   height:90px;
+}
+
+.profile-img{
+  width:100%;
+  height:100%;
   border-radius:50%;
   border:4px solid #000;
-  background:#000;
+  object-fit:cover;
 }
 
 .name-row{
@@ -292,7 +303,9 @@ body{
 
 <!-- BLOCO 1 -->
 <div class="card">
-  <div class="cover"></div>
+  <div class="cover">
+  <img src="https://github.com/user-attachments/assets/34fbf893-5c54-4bcd-9748-95554b4b9b98" alt="Capa">
+</div>
   <div class="profile-area">
 
     <div class="profile-header">
