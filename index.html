@@ -286,7 +286,23 @@ body{
     </div>
 
     <div class="description">
-      Perfil premium com conteúdos exclusivos e interação diferenciada.
+      <script>
+function toggleText(){
+  var shortText = document.getElementById("shortText");
+  var fullText = document.getElementById("fullText");
+  var btn = document.getElementById("toggleBtn");
+
+  if(fullText.style.display === "none"){
+    fullText.style.display = "inline";
+    shortText.style.display = "none";
+    btn.innerText = "Ver menos";
+  }else{
+    fullText.style.display = "none";
+    shortText.style.display = "inline";
+    btn.innerText = "Ver mais";
+  }
+}
+</script>
     </span>
       <span class="vermais" onclick="toggleDesc()" id="toggleBtn">Ver mais</span>
     </div>
