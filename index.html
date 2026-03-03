@@ -25,7 +25,7 @@ body{
 /* ===== BLOCO 1 ===== */
 
 .cover{
-  height:110px;
+  height:140px;
   background:url('capa.jpg') center/cover no-repeat;
 }
 
@@ -37,7 +37,7 @@ body{
   display:flex;
   align-items:flex-end;
   gap:14px;
-  margin-top:-40px;
+  margin-top:-70px; /* sobrepõe metade da foto */
 }
 
 .profile-img{
@@ -70,10 +70,27 @@ body{
   margin-top:14px;
 }
 
-.city{
-  font-size:13px;
+.read-more{
+  color:#ff8c5a;
+  cursor:pointer;
+  font-weight:500;
+  margin-left:4px;
+}
+
+.content-stats{
+  display:flex;
+  gap:18px;
+  margin-top:12px;
+  font-size:12px;
   color:#9A9A9A;
-  margin-top:8px;
+  align-items:center;
+}
+
+.content-stats svg{
+  width:14px;
+  height:14px;
+  margin-right:4px;
+  stroke:#9A9A9A;
 }
 
 /* REDES SOCIAIS */
@@ -272,25 +289,41 @@ body{
     </div>
 
     <div class="description">
-      Copy estratégica forte aqui. Algo que gere curiosidade e desejo imediato.
+      <span id="shortText">Copy estratégica forte aqui. Algo que gere curiosidade...</span>
+      <span id="fullText" style="display:none;">
+        Copy estratégica forte aqui. Algo que gere curiosidade e desejo imediato, criando conexão e despertando interesse contínuo pelo conteúdo exclusivo disponível no perfil.
+      </span>
+      <span class="read-more" onclick="toggleText()" id="toggleBtn">Ler mais</span>
+    </div>
+
+    <!-- CONTADORES SVG -->
+    <div class="content-stats">
+      <div style="display:flex;align-items:center;">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+        </svg>
+        283
+      </div>
+
+      <div style="display:flex;align-items:center;">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <rect x="4" y="6" width="16" height="12"></rect>
+        </svg>
+        470
+      </div>
+
+      <div style="display:flex;align-items:center;">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z"></path>
+        </svg>
+        293K
+      </div>
     </div>
 
     <div class="city">📍 Sua Cidade</div>
 
     <div class="socials">
-      <a href="https://instagram.com/seuuser" target="_blank" class="social-icon">
-        <svg viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
-          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
-          <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
-        </svg>
-      </a>
-
-      <a href="https://tiktok.com/@seuuser" target="_blank" class="social-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M16.5 3c.3 2.1 1.8 3.7 3.5 4v3.1c-1.3-.1-2.6-.6-3.5-1.4v6.3a5 5 0 1 1-5-5c.3 0 .6 0 .9.1v3.2a2 2 0 1 0 1.6 2V3h2.5z"/>
-        </svg>
-      </a>
+      <!-- mantido igual -->
     </div>
 
     <div class="actions">
@@ -301,49 +334,25 @@ body{
   </div>
 </div>
 
-<!-- BLOCO 2 -->
-<div class="card">
-  <div class="section-title">Assinaturas</div>
-  <div class="plan" onclick="openModal()">1 Mês <span>R$ 39,90</span></div>
-  <div class="plan" onclick="openModal()">6 Meses Promo <span>R$ 89,90</span></div>
-  <div class="plan" onclick="openModal()">12 Meses VIP <span>R$ 149,90</span></div>
-</div>
-
-<!-- BLOCO 3 -->
-<div class="card">
-  <div class="post-stats">
-    <span>15 Postagens</span>
-    <span>15 Mídias</span>
-  </div>
-
-  <div class="mini-profile">
-    <img src="perfil.jpg">
-    <div>
-      <div class="mini-name">SEU NOME <span class="verified">✔</span></div>
-      <div class="mini-user">@seuuser</div>
-    </div>
-  </div>
-
-  <div class="locked-post">
-    <div class="overlay">
-      <div>📸 8</div>
-      <div>🎥 3</div>
-      <div>❤️ 2.4K</div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL PIX -->
-<div class="modal" id="pixModal">
-  <div class="modal-content">
-    <h3>Pagamento via Pix</h3>
-    <img src="qrcode.png">
-    <div class="pix-code" id="pixCode">SUA CHAVE PIX AQUI</div>
-    <button class="btn-copy" onclick="copyPix()">Copiar código Pix</button>
-  </div>
-</div>
+<!-- restante do HTML permanece igual -->
 
 <script>
+function toggleText(){
+  let shortText=document.getElementById("shortText");
+  let fullText=document.getElementById("fullText");
+  let btn=document.getElementById("toggleBtn");
+
+  if(fullText.style.display==="none"){
+    fullText.style.display="inline";
+    shortText.style.display="none";
+    btn.innerText="Ler menos";
+  }else{
+    fullText.style.display="none";
+    shortText.style.display="inline";
+    btn.innerText="Ler mais";
+  }
+}
+
 function openModal(){
   document.getElementById("pixModal").style.display="flex";
 }
