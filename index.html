@@ -44,6 +44,8 @@ body{
 .cover{
   height:140px;
   background:url('capa.jpg') center/cover no-repeat;
+  position:relative;
+  z-index:1;
 }
 
 .profile-area{
@@ -54,7 +56,9 @@ body{
   display:flex;
   align-items:flex-end;
   gap:14px;
-  margin-top:-70px;
+  margin-top:-45px; /* metade da foto (90px / 2) */
+  position:relative;
+  z-index:2;
 }
 
 .profile-img{
@@ -62,6 +66,7 @@ body{
   height:90px;
   border-radius:50%;
   border:4px solid #000;
+  background:#000;
 }
 
 .name-row{
