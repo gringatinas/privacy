@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acesso</title>
+<title>Prévia VIP</title>
 
 <script>
 !function(f,b,e,v,n,t,s){
@@ -31,8 +31,8 @@ fbq('init','1548214903316952');
 fbq('track','PageView',{},{eventID:e1});
 
 fbq('track','ViewContent',{
-content_name:'Access',
-content_category:'Content'
+content_name:'Preview Group',
+content_category:'Telegram'
 },{eventID:e1});
 
 function g(n){
@@ -82,22 +82,6 @@ setTimeout(()=>{
 fbq('trackCustom','EngagedUser',{t:15});
 },15000);
 
-let s1=false;
-
-window.addEventListener('scroll',()=>{
-
-if(!s1&&window.scrollY>250){
-
-s1=true;
-
-fbq('trackCustom','ScrollDepth',{
-d:'50%'
-});
-
-}
-
-});
-
 let i1=false;
 
 document.addEventListener('click',()=>{
@@ -108,18 +92,6 @@ i1=true;
 
 fbq('trackCustom','UserInteraction');
 
-}
-
-});
-
-document.addEventListener('visibilitychange',()=>{
-
-if(document.visibilityState==='hidden'){
-fbq('trackCustom','PageHidden');
-}
-
-if(document.visibilityState==='visible'){
-fbq('trackCustom','PageVisible');
 }
 
 });
@@ -136,7 +108,7 @@ navigator.vibrate(50);
 
 }
 
-function x(t){
+function x(){
 
 v();
 
@@ -146,8 +118,7 @@ fbq(
 'track',
 'Lead',
 {
-cn:'Access',
-bc:t,
+cn:'PreviewGroup',
 ts:localStorage.getItem('utm_source')||'',
 cp:localStorage.getItem('utm_campaign')||'',
 fb:localStorage.getItem('fbclid')||''
@@ -161,7 +132,7 @@ fbq(
 'track',
 'InitiateCheckout',
 {
-cn:t,
+cn:'TelegramPreview',
 pf:'tg'
 },
 {
@@ -169,8 +140,7 @@ eventID:e2
 }
 );
 
-fbq('trackCustom','Click',{
-b:t,
+fbq('trackCustom','PreviewClick',{
 fbc:localStorage.getItem('_fbc')||'',
 fbp:localStorage.getItem('_fbp')||''
 });
@@ -179,10 +149,10 @@ fbp:localStorage.getItem('_fbp')||''
 
 function u(){
 
-let n=Math.floor(Math.random()*40)+110;
+let n=Math.floor(Math.random()*120)+4200;
 
 document.getElementById('c').innerText=
-'● '+n+' pessoas acessando agora';
+'● '+n+' pessoas online agora';
 
 }
 
@@ -191,7 +161,8 @@ setInterval(u,3000);
 </script>
 
 <noscript>
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1548214903316952&ev=PageView&noscript=1"/>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1548214903316952&ev=PageView&noscript=1"/>
 </noscript>
 
 <style>
@@ -208,16 +179,25 @@ height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-background:radial-gradient(circle at top,#020617,#000);
-color:#fff;
+background:
+linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.88)),
+url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
 overflow:hidden;
+color:#fff;
 }
 
 .w{
 width:100%;
 max-width:420px;
-padding:28px;
+padding:30px 26px;
 text-align:center;
+backdrop-filter:blur(10px);
+background:rgba(10,10,10,.45);
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+box-shadow:0 0 40px rgba(0,0,0,.45);
 animation:f .5s ease;
 }
 
@@ -234,53 +214,39 @@ transform:translateY(0);
 
 .b1{
 font-size:12px;
-font-weight:bold;
+font-weight:700;
 color:#ff4d4d;
-margin-bottom:8px;
-letter-spacing:1px;
+letter-spacing:1.5px;
+margin-bottom:12px;
 }
 
 h1{
-font-size:26px;
-font-weight:800;
-margin-bottom:10px;
+font-size:31px;
+font-weight:900;
+line-height:1.1;
+margin-bottom:12px;
 }
 
 .s1{
-font-size:14px;
-line-height:1.5;
-color:#94a3b8;
-margin-bottom:22px;
+font-size:15px;
+line-height:1.6;
+color:#cbd5e1;
+margin-bottom:24px;
 }
 
 .btn{
 display:block;
 width:100%;
-padding:16px;
-border-radius:14px;
+padding:18px;
+border-radius:18px;
 text-decoration:none;
-font-weight:800;
-font-size:16px;
-margin-bottom:12px;
-transition:.2s;
-border:none;
-cursor:pointer;
-}
-
-.p1{
+font-weight:900;
+font-size:17px;
+transition:.25s;
 background:linear-gradient(45deg,#229ED9,#38bdf8);
 color:#fff;
-animation:p 1.6s infinite;
-}
-
-.p2{
-background:#1e293b;
-color:#cbd5e1;
-}
-
-.p3{
-background:linear-gradient(45deg,#7c3aed,#a855f7);
-color:#fff;
+box-shadow:0 0 25px rgba(34,158,217,.45);
+animation:p 1.8s infinite;
 }
 
 .btn:hover{
@@ -288,32 +254,35 @@ transform:translateY(-2px);
 }
 
 .btn:active{
-transform:scale(0.98);
+transform:scale(.98);
 }
 
 @keyframes p{
 0%{
-box-shadow:0 0 8px rgba(34,158,217,.3);
+box-shadow:0 0 10px rgba(34,158,217,.3);
 }
 50%{
-box-shadow:0 0 24px rgba(34,158,217,.9);
+box-shadow:0 0 28px rgba(34,158,217,.9);
 }
 100%{
-box-shadow:0 0 8px rgba(34,158,217,.3);
+box-shadow:0 0 10px rgba(34,158,217,.3);
 }
 }
 
 .c1{
 font-size:13px;
-font-weight:bold;
+font-weight:700;
 color:#22c55e;
-margin-top:12px;
+margin-top:18px;
 }
 
-.l1{
+.r1{
+margin-top:18px;
 font-size:12px;
-color:#64748b;
-margin-top:6px;
+color:#94a3b8;
+line-height:1.5;
+border-top:1px solid rgba(255,255,255,.08);
+padding-top:16px;
 }
 
 </style>
@@ -324,32 +293,31 @@ margin-top:6px;
 <div class="w">
 
 <div class="b1">
-ACESSO DISPONÍVEL
+PRÉVIAS LIBERADAS
 </div>
 
 <h1>
-Entrar no Telegram
+Tudo que acontece nas Favelas 🇧🇷
 </h1>
 
 <div class="s1">
-Atualizado recentemente
+Arquivos exclusivos, conteúdo atualizado diariamente e acesso imediato ao grupo de prévias.
 </div>
 
 <a
 href="https://t.me/baixarendabrasil"
-class="btn p2"
-onclick="x('s')"
+class="btn"
+onclick="x()"
 >
-BAIXA RENDA GRATUITO ⭐
+🔥 Entrar no Grupo de Prévias
 </a>
 
-
 <div class="c1" id="c">
-● 4680 pessoas acessando agora
+● 4680 pessoas online agora
 </div>
 
-<div class="l1">
-Acesse aa melhores do Brasil acima!
+<div class="r1">
+🏚️ Urban • Latina • VIP Collection
 </div>
 
 </div>
